@@ -1,0 +1,56 @@
+<app-loading *ngIf="!dataReceived"></app-loading>
+<app-no-results *ngIf="tempMedicalHistory.length == 0"></app-no-results>
+<div class="medical-record-cards" fxLayout="row wrap" fxLayoutGap="30px">
+  <div *ngFor="let data of tempMedicalHistory; index as i" fxFlex="0 0 calc(25%-30px)">
+    <!--Medical Record Card-->
+    <mat-card class="record-card">
+      <mat-card-header>
+        <mat-card-title>{{data.id}} {{data.type}}Presciption</mat-card-title>
+        <mat-card-subtitle>{{data[1]}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="label">Doctor Name</p>
+        <p class="value">{{doctor_address_mapping[data[0]].doctor_name}}</p>
+        <hr noshade>
+        <p class="label">Organization Name</p>
+        <p class="value">{{doctor_address_mapping[data[0]].organization_name}}</p>
+      </mat-card-content>
+      <button class="filled-button" (click)="openDialog(i)" style="width:100%">View Details</button>
+    </mat-card>
+  </div>
+</div>
+<!--Pagination-->
+<div class="change-page-container" *ngIf="tempMedicalHistory.length > 0" fxLayout="row" fxLayoutAlign="center baseline"
+  fxLayoutGap="15px">
+  <div class="change-page-left" *ngIf="currentPageOnDisplay!=1" (click)="changePageNumber('previous')">
+    <img src="../../../../../assets/images/left-arrow.svg">
+  </div>
+
+  <div *ngIf="displayPageNumbersArray[0]!=1" class="page-numbers" (click)="changePageNumber(1)">
+    1
+  </div>
+  <div *ngIf="displayPageNumbersArray[0]!=1">...</div>
+
+  <div *ngFor="let number of displayPageNumbersArray">
+    <div class="page-numbers" (click)="changePageNumber(number)" [class.active-page]="currentPageOnDisplay==number">
+      {{number}}
+    </div>
+  </div>
+
+  <div *ngIf="displayPageNumbersArray[displayPageNumbersArray.length-1]!=totalPages">...</div>
+  <div *ngIf="displayPageNumbersArray[displayPageNumbersArray.length-1]!=totalPages" class="page-numbers"
+    (click)="changePageNumber(totalPages)">
+    {{totalPages}}
+  </div>
+
+  <div class="change-page-right" *ngIf="currentPageOnDisplay!=endPage" (click)="changePageNumber('next')">
+    <img src="../../../../../assets/images/right-arrow.svg">
+  </div>
+
+  <p class="page-size-container" fxFlexAlign="end center">Items per page:
+    <span *ngFor="let size of pageSizes" class="page-size" (click)="changePageSize(size.value)"
+      [ngStyle]="{'color': size.selected ? '#44697d': 'black'}">
+      {{size.value}}
+    </span>
+  </p>
+</div>

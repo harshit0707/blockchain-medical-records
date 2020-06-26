@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+  <mat-sidenav #sideNav>
+    <div *ngFor="let option of sideNavOptions" class="sideNav" routerLink="{{option.route}}"
+    routerLinkActive="sideNavActive" (click)="changeData(option.value)">
+      {{option.value}}
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div>
+      <div class="heading" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+        <img class="menu-image" src="../../../../../assets/images/hamburger.svg"(click)="sideNav.open()">
+        <p class="heading-text">{{title}}</p>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

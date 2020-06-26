@@ -1,0 +1,30 @@
+<app-loading *ngIf="!dataReceived"></app-loading>
+<app-no-results *ngIf="dataReceived && approvalData.length == 0"></app-no-results>
+<div class="medical-approval-cards" fxLayout="row wrap" fxLayoutGap="30px" style="padding-left: 30px">
+  <div *ngFor="let data of approvalData; index as i" fxFlex="0 0 calc(25%-30px)" class="flip-card">
+    <div class="flip-card-inner">
+      <!--Medical approval Card-->
+      <mat-card class="approval-card">
+        <mat-card-header>
+          <mat-card-title>{{data.id}} {{data.type}}Presciption</mat-card-title>
+          <mat-card-subtitle>{{data[1]}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="label">Doctor Name</p>
+          <p class="value">{{doctor_address_mapping[data[0]].doctor_name}}</p>
+          <hr noshade>
+          <p class="label">Organization Name</p>
+          <p class="value">{{doctor_address_mapping[data[0]].organization_name}}</p>
+        </mat-card-content>
+        <button class="filled-button" (click)="openDialog(i)" style="width: 100%">View Details</button>
+      </mat-card>
+      <div class="overlay">
+        <div class="overlay-info" fxLayout="column" fxlayoutAlign="start center" fxLayoutGap="30px">
+          <button class="filled-button" (click)="approveData(i)">Accept</button>
+          <button class="filled-button" (click)="denyData(i)">Deny</button>
+        </div>
+        <button class="filled-button overlay-button" (click)="openDialog(i)" style="width: 100%">View Details</button>
+      </div>
+    </div>
+  </div>
+</div>

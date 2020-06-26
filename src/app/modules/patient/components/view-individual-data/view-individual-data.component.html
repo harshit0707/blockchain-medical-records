@@ -1,0 +1,31 @@
+<div class="container" fxLayout="column" fxLayoutGap="20px">
+  <div class="other-details" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-around">
+    <div fxLayout="column" fxLayoutGap="20px">
+      <div class="title">Doctor's Name:</div>
+      <div class="title">Organizations's Name:</div>
+      <div class="title">Prescribed On:</div>
+    </div>
+    <div fxLayout="column" fxLayoutGap="20px">
+      <div class="data">{{data.doctor_name}}</div>
+      <div class="data">{{data.organization_name}}</div>
+      <div class="data">{{data.date}}</div>
+    </div>
+  </div>
+
+  <button class="filled-button">View Doctor Details</button>
+
+  <table class="medicine-details">
+    <tr>
+      <th>Medicine Name</th>
+      <th>No of Tablets</th>
+    </tr>
+    <tr *ngFor="let dataItem of data['medicines']">
+      <td class="medicine-name">{{dataItem.name}}</td>
+      <td class="medicine-quantity">{{dataItem.quantity}}</td>
+    </tr>
+  </table>
+  <div fxLayout="row" fxLayoutGap="20px">
+    <button fxFlex="0 0 calc(50%-20px)" class="filled-button">Download PDF</button>
+    <button fxFlex="0 0 calc(50%)" class="unfilled-button" (click)="closeDialog()">Close</button>
+  </div>
+</div>

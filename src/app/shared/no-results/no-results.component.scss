@@ -1,0 +1,17 @@
+.no-results-container {
+    margin-bottom: 50px;
+}
+.image-container {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 30px -5px green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    height: 50%;
+    width: 50%;
+}

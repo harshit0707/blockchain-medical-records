@@ -1,0 +1,12 @@
+<div class="header" fxLayout="column" fxLayoutAlign="start">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+      <h1 class="header-heading">HEALTHCARE</h1>
+      <img src="../../../assets/images/logo.svg" class="logo">
+    </div>
+    <img src="../../../assets/images/person.svg" class="header-image">
+  </div>
+  <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="end">
+    <p routerLink="{{item.url}}" routerLinkActive="navActive" class="navItems" *ngFor="let item of navItems">{{item.name}}</p>
+  </div>
+</div>

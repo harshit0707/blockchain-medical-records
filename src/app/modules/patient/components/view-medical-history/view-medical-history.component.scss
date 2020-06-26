@@ -1,0 +1,115 @@
+.medical-record-cards {
+    padding: 0px 0px 0px 30px;
+    background-color: #f7f7f7;
+}
+.record-card {
+    background-color: white;
+    margin-bottom: 30px;
+}
+.label {
+    margin: 0px 0px 5px 0px;
+    font-size: 16px;
+}
+.value {
+    margin: 0px 0px 5px 0px;
+    font-size: 16px;
+    color: #545454;
+}
+hr {
+    margin: 15px 0px;
+    height: 0px;
+    border: 0.5px solid #dbdbdb;
+}
+::ng-deep .mat-card {
+    padding: 0px!important;
+}
+::ng-deep .record-card {
+    & .mat-card-header {
+        background-color: #f2f2f2!important;
+    }
+    & .mat-card-header-text{
+        margin: 0px!important;
+        padding: 10px 15px!important;
+    }
+    & .mat-card-title {
+        margin: 0px!important;
+    }
+    & .mat-card-subtitle {
+        margin: 3px 0px 0px 0px !important;
+        color: #545454 !important;
+    }
+    & .mat-card-content {
+        padding: 15px 15px 15px 15px !important;
+        margin: 0px!important;
+        overflow: hidden;
+    }
+}
+.filled-button {
+    background-color: rgba(0,128,0,0.7);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+.unfilled-button {
+    background-color: white;
+    color: rgba(0,128,0,0.7);
+    padding: 10px 20px;
+    border: 1px solid rgba(0,128,0,0.7);
+    outline: none;
+    font-size: 16px;
+}
+button {
+    &:hover {
+        cursor: pointer;
+    }
+}
+.change-page-container {
+    padding: 30px 30px 40px 30px;
+    background-color: #f7f7f7;
+    position: relative;
+}
+.change-page-left, .change-page-right {
+    height: 25px;
+    width: 25px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.change-page-left {
+    padding-right: 10px;
+}
+.change-page-right {
+    padding-left: 10px;
+}
+.page-numbers {
+    background-color: white;
+    padding: 10px 20px;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    &:hover {
+        background-color: #44697d;
+        color: white;
+        cursor: pointer;
+    }
+}
+.active-page {
+    background-color: #44697d;
+    color: white;
+}
+.page-size-container {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+.page-size {
+    padding: 0px 10px;
+    border-right: 1px solid #dbdbdb;
+    &:hover {
+        cursor: pointer;
+    }
+}
+p {
+    margin: 0px;
+}

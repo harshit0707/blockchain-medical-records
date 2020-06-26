@@ -1,0 +1,27 @@
+.heading {
+    background-color: #f7f7f7;
+    padding: 30px 30px;
+}
+.heading-text {
+    font-size: 35px;
+}
+.menu-image {
+    height: 30px;
+    width: 30px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.sideNav {
+    padding: 18px;
+    font-size: 18px;
+    border-bottom: 1px solid #dbdbdb;
+    outline: none;
+    &:hover {
+        background-color: #dbdbdb;
+        cursor: pointer;
+    }
+}
+.sideNavActive{
+    background-color: #dbdbdb;
+}

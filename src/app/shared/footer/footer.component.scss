@@ -1,0 +1,30 @@
+.footer {
+    padding: 10px 30px;
+    background-color: black;
+}
+.footer-text {
+    color: white;
+}
+.contact-icon {
+    width: 30px;
+    height: 30px;
+}
+.contact-text {
+    color: white;
+    text-decoration: underline;
+}
+.social-media-icon {
+    height: 30px;
+    width: 30px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.copyright {
+    padding: 5px 30px;
+    background-color: #0d0d0d;
+}
+.copyright-text {
+    margin:0px;
+    color: #dbdbdb;
+}

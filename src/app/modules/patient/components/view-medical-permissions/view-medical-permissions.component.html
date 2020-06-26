@@ -1,0 +1,41 @@
+<app-loading *ngIf="!dataReceived"></app-loading>
+<app-no-results *ngIf="dataReceived && permissionsData.length == 0"></app-no-results>
+<div class="container">
+  <mat-card *ngFor="let data of permissionsData; index as i" class="permissionListCard">
+    <div fxLayout="row" fxLayoutAlign="start start" style="padding:20px!important">
+      <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="details-1">
+        <div>
+          <p class="label">Doctor Name</p>
+          <p class="value">{{doctor_address_mapping[data[0]].doctor_name}}</p>
+        </div>
+        <div>
+          <p class="label">Organization Name</p>
+          <p class="value">{{doctor_address_mapping[data[0]].organization_name}}</p>
+        </div>
+        <div>
+          <p class="label">Date</p>
+          <p class="value">{{data.date}}</p>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="space-between" class="details-2">
+        <div class="message">
+          {{data.message}}
+        </div>
+        <div class="buttons" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px" *ngIf="!formActive">
+          <button class="unfilled-button" (click)="denyPermission(data.index)">Deny</button>
+          <button class="filled-button" (click)="activateForm()">Allow</button>
+        </div>
+        <div [formGroup]="timePeriod" *ngIf="formActive" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="20px">
+          <mat-form-field>
+            <input matInput formControlName="hours" placeholder="Hours">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput formControlName="days" placeholder="Days">
+          </mat-form-field>
+          <button class="filled-button" (click)="grantPermission(data.index)">Allow</button>
+          <button class="unfilled-button" (click)="deactivateForm()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,63 @@
+{
+	"abi": [
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "a",
+					"type": "address"
+				},
+				{
+					"name": "d",
+					"type": "string"
+				},
+				{
+					"name": "s",
+					"type": "string[]"
+				},
+				{
+					"name": "u",
+					"type": "uint256[]"
+				}
+			],
+			"name": "setData",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "getData",
+			"outputs": [
+				{
+					"components": [
+						{
+							"name": "provider_address",
+							"type": "address"
+						},
+						{
+							"name": "date",
+							"type": "string"
+						},
+						{
+							"name": "medicine_name",
+							"type": "string[]"
+						},
+						{
+							"name": "quantity",
+							"type": "uint256[]"
+						}
+					],
+					"name": "",
+					"type": "tuple[]"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		}
+	],
+	"address": "0x1493c54050a4ab7c0f07f4bb45b8C95636afE337"
+} 

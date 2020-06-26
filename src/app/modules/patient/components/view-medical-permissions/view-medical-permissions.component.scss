@@ -1,0 +1,61 @@
+.container {
+  background-color: #f7f7f7;
+  padding: 0px 30px;
+}
+
+.permissionListCard {
+  // padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.label {
+  margin: 0px 0px 5px 0px;
+  font-size: 16px;
+}
+
+.value {
+  margin: 0px 0px 5px 0px;
+  font-size: 16px;
+  color: #545454;
+}
+
+.details-1 {
+  padding-right: 40px;
+  border-right: 1px solid #dbdbdb;
+}
+
+.details-2 {
+  padding-left: 40px;
+  height: 130px;
+}
+
+::ng-deep .permissionListCard {
+  &.mat-card {
+    box-shadow: 0px 1px 10px 3px #dbdbdb !important;
+  }
+}
+
+.filled-button {
+  background-color: rgba(0, 128, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.unfilled-button {
+  background-color: white;
+  color: rgba(0, 128, 0, 0.7);
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 128, 0, 0.7);
+  outline: none;
+  font-size: 16px;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}

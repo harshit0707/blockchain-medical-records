@@ -1,0 +1,60 @@
+.container {
+    padding: 20px;
+}
+.other-details {
+    border: 1px solid #dbdbdb;
+    padding: 10px 0px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 2px #dbdbdb;
+}
+.title {
+    font-size: 18px;
+}
+.data {
+    font-size: 18px;
+    color: #545454;
+}
+table {
+    border: 1px solid #dbdbdb;
+    box-shadow: 0px 0px 2px #dbdbdb;
+}
+table, th, td {
+    border-collapse: collapse;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+}
+th, td {
+    padding: 20px 40px;
+}
+tr {
+    &:nth-child(even) {
+        background-color: #f7f7f7;
+    }
+}
+.medicine-quantity {
+    text-align: center;
+}
+p {
+    margin: 0px;
+}
+.filled-button {
+    background-color: rgba(0,128,0,0.7);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+.unfilled-button {
+    background-color: white;
+    color: rgba(0,128,0,0.7);
+    padding: 10px 20px;
+    border: 1px solid rgba(0,128,0,0.7);
+    outline: none;
+    font-size: 16px;
+}
+button {
+    &:hover {
+        cursor: pointer;
+    }
+}
